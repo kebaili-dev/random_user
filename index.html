@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random user</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js" defer></script>
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <main id="app">
+        <h1>Random user</h1>
+    
+        <button v-on:click="getRandomUser" id="generate-random-user">Générer un utilisateur aléatoire</button>
+        
+        <section v-if="user" id="random-user">
+            <h2>{{ fullname }}</h2>
+            <p>{{ user.phone }}</p>
+            <figure>
+                <img v-bind:src="user.picture.large" v-bind:alt="fullname">
+            </figure>
+        </section>
+    </main>
+</body>
+</html>
